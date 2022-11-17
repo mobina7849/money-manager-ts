@@ -46,7 +46,6 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline/>
            <RouterProvider router={Route} />
-           <Button variant='contained' onClick={()=>setMode(mode==='dark'?'light':'dark')}>mode</Button>
        </ThemeProvider>
     </Provider>
  
