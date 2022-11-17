@@ -71,7 +71,7 @@ const AddMoneyForm = (): JSX.Element => {
                     <TextField name={'month'} onChange={handleChange} select value={form.month} fullWidth
                                label={'انتخاب ماه'} SelectProps={{native: true}}>
                         {AddMoneyFormMonth.map(o => (
-                            <option key={o.id} value={o.value}>
+                            <option key={o.id} value={o.title}>
                                 {o.title}
                             </option>
                         ))}

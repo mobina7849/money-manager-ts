@@ -67,9 +67,12 @@ const MoneyCard = ({backgroundColor, title, icon, type}: MoneyCardProps): JSX.El
                         <Divider  sx={{ backgroundColor:'red',color:'red'}} />
                     </Grid>
                     <Divider  sx={{ backgroundColor:'red'}} />
+                    <Grid>{m.month}</Grid>
                  </>
                 ))}
+
             </Grid>
+         
         </Grid>
       </Paper>
     )

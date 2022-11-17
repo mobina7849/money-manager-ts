@@ -9,22 +9,22 @@ import { amber,grey } from "@mui/material/colors";
 //     }
 // })
 export const getDesignTokens = (mode: string) =>createTheme({
-    components:{
+    // components:{
      
       
-        MuiCssBaseline:{
+    //     MuiCssBaseline:{
           
-            styleOverrides:{
-                body:{
+    //         styleOverrides:{
+    //             body:{
                
-                  ...(mode==='dark'?
-                  { background:'#000'}:{background:'#F3F5F7'}
-                  )
+    //               ...(mode==='dark'?
+    //               { background:'#121212'}:{background:'#F3F5F7'}
+    //               )
                     
-                }
-            }
-        },
-    },
+    //             }
+    //         }
+    //     },
+    // },
  
     palette: {
      
@@ -45,14 +45,15 @@ export const getDesignTokens = (mode: string) =>createTheme({
         : {
             // palette values for dark mode
             primary: grey,
-            divider: grey[700],
+            divider:'rgba(255, 255, 255, 0.5)',
             background: {
               default: grey[900],
               paper: grey[900],
             },
             text: {
               primary: '#fff',
-              secondary: '#000',
+              secondary: 'rgba(255, 255, 255, 0.7)',
+              disabled:'rgba(255, 255, 255, 0.5)'
             },
           }),
     },
