@@ -1,5 +1,5 @@
 import { createTheme, PaletteMode } from "@mui/material";
-import { amber, deepOrange, grey } from "@mui/material/colors";
+import { amber,grey } from "@mui/material/colors";
 
 // export const theme= createTheme({
 //     palette:{
@@ -8,13 +8,34 @@ import { amber, deepOrange, grey } from "@mui/material/colors";
 //         }
 //     }
 // })
-export const getDesignTokens = (mode: PaletteMode) =>createTheme({
+export const getDesignTokens = (mode: string) =>createTheme({
+    components:{
+     
+      
+        MuiCssBaseline:{
+          
+            styleOverrides:{
+                body:{
+               
+                  ...(mode==='dark'?
+                  { background:'#000'}:{background:'#F3F5F7'}
+                  )
+                    
+                }
+            }
+        },
+    },
+ 
     palette: {
-      mode,
+     
       ...(mode === 'light'
         ? {
             // palette values for light mode
-            primary: amber,
+            primary:{
+                main:"#9c27b0",
+                light:"#ba68c8",
+                dark:"#7b1fa"
+            },
             divider: amber[200],
             text: {
               primary: grey[900],
@@ -23,17 +44,20 @@ export const getDesignTokens = (mode: PaletteMode) =>createTheme({
           }
         : {
             // palette values for dark mode
-            primary: deepOrange,
-            divider: deepOrange[700],
+            primary: grey,
+            divider: grey[700],
             background: {
-              default: deepOrange[900],
-              paper: deepOrange[900],
+              default: grey[900],
+              paper: grey[900],
             },
             text: {
               primary: '#fff',
-              secondary: grey[500],
+              secondary: '#000',
             },
           }),
     },
+    typography:{
+        fontFamily:'IRANSANS'
+    }
   });
   
